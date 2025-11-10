@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
 /* --- ESTILOS GENERALES --- */
 body {
-    background-color: #1e1e1e; /* Fondo oscuro (como en un editor) */
+    background-color: #1e1e1e; /* Fondo oscuro como en un editor de mi mac jajaja */
     color: #d4d4d4; /* Texto gris claro */
-    font-family: "Roboto Mono", monospace; /* ¡Nuestra fuente de terminal! */
+    font-family: "Roboto Mono", monospace; /*  fuente de terminal */
     margin: 0;
     padding: 20px;
 }
@@ -14,7 +14,7 @@ body {
     margin: 40px auto; /* Centrar la ventana */
     background-color: #252526; /* Un gris un poco más claro que el fondo */
     border: 1px solid #333;
-    border-radius: 8px; /* Esquinas redondeadas */
+    border-radius: 8px; /* Esquinas redondeadas y bonitas */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para que "flote" */
     overflow: hidden; /* Para que los bordes redondeados funcionen */
 }
@@ -27,24 +27,24 @@ body {
     align-items: center;
 }
 
-/* Los "botones" de la ventana (rojo, amarillo, verde) */
+/* Los "botones" de la ventana de Mac rojo, amarillo, verde */
 .terminal-header span {
     display: block;
     width: 12px;
     height: 12px;
-    border-radius: 50%; /* Círculos perfectos */
+    border-radius: 50%; /* Círculos perfectos  */
     margin-right: 6px;
 }
 
 .terminal-header span:nth-child(1) {
     background-color: #ff5f56;
-} /* Rojo */
+} /* Boton Rojo */
 .terminal-header span:nth-child(2) {
     background-color: #ffbd2e;
-} /* Amarillo */
+} /* Boton Amarillo */
 .terminal-header span:nth-child(3) {
     background-color: #27c93f;
-} /* Verde */
+} /* Boton Verde */
 
 /* --- CUERPO DE LA TERMINAL --- */
 .terminal-body {
@@ -69,7 +69,7 @@ body {
     color: #fafafa; /* Texto blanco más brillante para el resultado */
 }
 
-/* --- LA MAGIA: EL CURSOR PARPADEANTE --- */
+/* EL CURSOR PARPADEANTE */
 .cursor {
     animation: blink 1s step-end infinite;
     color: #fafafa;
@@ -93,7 +93,7 @@ body {
 #proyectos h2 {
     font-size: 1.8em;
     color: #fafafa;
-    border-bottom: 2px solid #569cd6; /* Línea azul (como el prompt) */
+    border-bottom: 2px solid #569cd6; /* Línea azul como el prompt */
     padding-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@ body {
 
 /* --- EL ENLACE A GITHUB --- */
 .github-link {
-    display: inline-block; /* Para que podamos darle estilo de botón */
+    display: inline-block; /* estilo de botón */
     margin-top: 15px;
     padding: 10px 15px;
     background-color: #569cd6; /* El azul del prompt */
@@ -142,7 +142,7 @@ body {
 #habilidades h2 {
     font-size: 1.8em;
     color: #fafafa;
-    border-bottom: 2px solid #569cd6; /* Mismo subrayado azul */
+    border-bottom: 2px solid #569cd6; /* subrayado azul */
     padding-bottom: 10px;
 }
 
@@ -202,7 +202,7 @@ header nav ul {
     list-style: none; /* Quita los puntos */
     margin: 0;
     padding: 0;
-    display: flex; /* ¡La clave para ponerlos en horizontal! */
+    display: flex; /* asi esta en horizontal */
 }
 
 header nav li {
@@ -245,8 +245,6 @@ header nav a:hover {
     margin: 25px auto; /* Centrar el párrafo */
 }
 
-/* ¡REUTILIZAMOS EL ESTILO DEL BOTÓN!
-   No necesitamos escribir nuevo CSS.
-   La clase ".github-link" que ya definimos
-   le dará el estilo de botón azul.
+/*
+Aza estuvo aquí
 */
