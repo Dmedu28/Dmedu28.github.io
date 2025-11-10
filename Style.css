@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+/* --- ESTILOS GENERALES --- */
+body {
+    background-color: #1e1e1e; /* Fondo oscuro (como en un editor) */
+    color: #d4d4d4; /* Texto gris claro */
+    font-family: "Roboto Mono", monospace; /* ¡Nuestra fuente de terminal! */
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- LA VENTANA DE TERMINAL --- */
+.terminal-window {
+    max-width: 700px; /* Ancho máximo */
+    margin: 40px auto; /* Centrar la ventana */
+    background-color: #252526; /* Un gris un poco más claro que el fondo */
+    border: 1px solid #333;
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para que "flote" */
+    overflow: hidden; /* Para que los bordes redondeados funcionen */
+}
+
+/* --- BARRA SUPERIOR DE LA VENTANA --- */
+.terminal-header {
+    background-color: #3c3c3c;
+    padding: 10px;
+    display: flex; /* Para alinear los botones */
+    align-items: center;
+}
+
+/* Los "botones" de la ventana (rojo, amarillo, verde) */
+.terminal-header span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Círculos perfectos */
+    margin-right: 6px;
+}
+
+.terminal-header span:nth-child(1) {
+    background-color: #ff5f56;
+} /* Rojo */
+.terminal-header span:nth-child(2) {
+    background-color: #ffbd2e;
+} /* Amarillo */
+.terminal-header span:nth-child(3) {
+    background-color: #27c93f;
+} /* Verde */
+
+/* --- CUERPO DE LA TERMINAL --- */
+.terminal-body {
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.terminal-body p {
+    margin: 0 0 15px 0; /* Espacio entre líneas de comando */
+}
+
+/* El símbolo '$' */
+.prompt {
+    color: #569cd6; /* Un color azul brillante */
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* El texto de "output" */
+.output {
+    color: #fafafa; /* Texto blanco más brillante para el resultado */
+}
+
+/* --- LA MAGIA: EL CURSOR PARPADEANTE --- */
+.cursor {
+    animation: blink 1s step-end infinite;
+    color: #fafafa;
+}
+
+@keyframes blink {
+    from,
+    to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+/* --- SECCIÓN DE PROYECTOS --- */
+#proyectos {
+    max-width: 700px;
+    margin: 60px auto; /* Centrar la sección y darle espacio */
+}
+
+#proyectos h2 {
+    font-size: 1.8em;
+    color: #fafafa;
+    border-bottom: 2px solid #569cd6; /* Línea azul (como el prompt) */
+    padding-bottom: 10px;
+}
+
+/* --- TARJETA DE PROYECTO INDIVIDUAL --- */
+.project-card {
+    background-color: #252526; /* Mismo color que la terminal */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px; /* Espacio entre proyectos */
+}
+
+.project-card h3 {
+    font-size: 1.4em;
+    color: #d4d4d4;
+    margin-top: 0;
+}
+
+.project-card p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* --- EL ENLACE A GITHUB --- */
+.github-link {
+    display: inline-block; /* Para que podamos darle estilo de botón */
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #569cd6; /* El azul del prompt */
+    color: #fafafa;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: #4084c4; /* Un azul un poco más oscuro al pasar el mouse */
+}
+/* --- SECCIÓN DE HABILIDADES --- */
+#habilidades {
+    max-width: 700px;
+    margin: 60px auto; /* Centrar la sección */
+}
+
+#habilidades h2 {
+    font-size: 1.8em;
+    color: #fafafa;
+    border-bottom: 2px solid #569cd6; /* Mismo subrayado azul */
+    padding-bottom: 10px;
+}
+
+/* El contenedor de todas las categorías */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+    ); /* Rejilla responsiva */
+    gap: 20px; /* Espacio entre columnas */
+    margin-top: 25px;
+}
+
+/* Cada tarjeta de categoría */
+.skill-category {
+    background-color: #252526; /* Mismo color que la terminal */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+.skill-category h3 {
+    color: #569cd6; /* Título en azul */
+    margin-top: 0;
+    border-bottom: 1px dashed #555; /* Divisor sutil */
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.skill-category li {
+    padding: 5px 0; /* Espacio entre cada habilidad */
+    font-size: 0.95em;
+}
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* Centrar y dar espacio abajo */
+    display: flex;
+    justify-content: space-between; /* Logo a la izq, links a la der */
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #fafafa;
+    font-weight: 500;
+}
+
+header nav ul {
+    list-style: none; /* Quita los puntos */
+    margin: 0;
+    padding: 0;
+    display: flex; /* ¡La clave para ponerlos en horizontal! */
+}
+
+header nav li {
+    margin-left: 25px; /* Espacio entre cada link */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #569cd6; /* Links en azul, como el prompt */
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Borde transparente para preparar el hover */
+    transition: all 0.3s ease;
+}
+
+/* El efecto al pasar el mouse */
+header nav a:hover {
+    color: #fafafa; /* Link se pone blanco */
+    border-bottom: 2px solid #fafafa; /* Se subraya de blanco */
+}
+/* --- SECCIÓN DE CONTACTO --- */
+#contacto {
+    max-width: 700px;
+    margin: 60px auto;
+    text-align: center; /* Centrar todo en esta sección */
+}
+
+#contacto h2 {
+    font-size: 1.8em;
+    color: #fafafa;
+    border-bottom: 2px solid #569cd6;
+    padding-bottom: 10px;
+    display: inline-block; /* Para que el subrayado se ajuste al texto */
+}
+
+#contacto p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 25px auto; /* Centrar el párrafo */
+}
+
+/* ¡REUTILIZAMOS EL ESTILO DEL BOTÓN!
+   No necesitamos escribir nuevo CSS.
+   La clase ".github-link" que ya definimos
+   le dará el estilo de botón azul.
+*/
