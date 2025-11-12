@@ -16,6 +16,8 @@
                     <li><a href="#habilidades">/skills</a></li>
                     <li><a href="#contacto">contacto</a></li>
                 </ul>
+
+                <button id="theme-toggle">🌙</button>
             </nav>
         </header>
 
@@ -29,9 +31,7 @@
                     <div class="terminal-body">
                         <p><span class="prompt">$</span> python about_me.py</p>
                         <p class="output">
-                            Hola, soy Aza. <br />
-                            Esto es un portafolio digital para poder subir mis
-                            proyectos relacionados a la carrera.
+                            <span id="mi-biografia"></span>
                         </p>
                         <p>
                             <span class="prompt">$</span>
@@ -41,18 +41,21 @@
                 </div>
             </section>
 
-            <section id="proyectos">
+            <section id="proyectos" class="hidden">
                 <h2>Proyectos Principales (/proyectos)</h2>
                 <div class="project-card">
-                    <h3>Servicio social</h3>
-                    <p>Tesis</p>
-                    <a href="link-a-tu-github" class="github-link"
+                    <h3>Proyectos</h3>
+                    <p>BLAST local</p>
+                    <a
+                        href="https://github.com/Dmedu28/proyecto-blast-local"
+                        class="github-link"
+                        target="_blank"
                         >Ver en GitHub</a
                     >
                 </div>
             </section>
 
-            <section id="habilidades">
+            <section id="habilidades" class="hidden">
                 <h2>Mi Caja de Herramientas (/skills)</h2>
 
                 <div class="skills-container">
@@ -68,7 +71,7 @@
                     <div class="skill-category">
                         <h3>Bioinformática</h3>
                         <ul>
-                            <li>Análisis</li>
+                            <li>Linux</li>
                             <li>BLAST</li>
                             <li>Gestión de Entornos (Conda)</li>
                         </ul>
@@ -85,7 +88,7 @@
                 </div>
             </section>
 
-            <section id="contacto">
+            <section id="contacto" class="hidden">
                 <h2>Aza (/contacto)</h2>
                 <p>Correo</p>
                 <a href="azaelcuellar@proton.me" class="github-link">
@@ -93,5 +96,7 @@
                 </a>
             </section>
         </main>
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -1,8 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+/* --- INICIO: VARIABLES DE TEMA --- */
+:root {
+    /* MODO OSCURO (Default) */
+    --color-bg: #1e1e1e;
+    --color-bg-card: #252526;
+    --color-text-main: #d4d4d4;
+    --color-text-bright: #fafafa;
+    --color-accent: #569cd6;
+    --color-accent-hover: #4084c4;
+    --color-border: #333;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode {
+    /* MODO CLARO (Override) */
+    --color-bg: #f5f5f5;
+    --color-bg-card: #ffffff;
+    --color-text-main: #333333;
+    --color-text-bright: #111111;
+    --color-accent: #007acc;
+    --color-accent-hover: #005a9e;
+    --color-border: #dddddd;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+/* --- FIN: VARIABLES DE TEMA --- */
+html {
+    scroll-behavior: smooth;
+}
 /* --- ESTILOS GENERALES --- */
 body {
-    background-color: #1e1e1e; /* Fondo oscuro como en un editor de mi mac jajaja */
-    color: #d4d4d4; /* Texto gris claro */
+    background-color: var(--color-bg); /* <- Variable */
+    color: var(--color-text-main); /* <- Variable */
     font-family: "Roboto Mono", monospace; /*  fuente de terminal */
     margin: 0;
     padding: 20px;
@@ -12,22 +40,24 @@ body {
 .terminal-window {
     max-width: 700px; /* Ancho máximo */
     margin: 40px auto; /* Centrar la ventana */
-    background-color: #252526; /* Un gris un poco más claro que el fondo */
-    border: 1px solid #333;
+    background-color: var(
+        --color-bg-card
+    ); /* Un gris un poco más claro que el fondo */
+    border: 1px solid var(--color-border);
     border-radius: 8px; /* Esquinas redondeadas y bonitas */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para que "flote" */
+    box-shadow: var(--color-shadow); /* Sombra para que "flote" */
     overflow: hidden; /* Para que los bordes redondeados funcionen */
 }
 
 /* --- BARRA SUPERIOR DE LA VENTANA --- */
 .terminal-header {
-    background-color: #3c3c3c;
+    background-color: var(--color-border);
     padding: 10px;
     display: flex; /* Para alinear los botones */
     align-items: center;
 }
 
-/* Los "botones" de la ventana de Mac rojo, amarillo, verde */
+/* Los "botones" de la ventana de Mac; rojo, amarillo, verde */
 .terminal-header span {
     display: block;
     width: 12px;
@@ -59,20 +89,22 @@ body {
 
 /* El símbolo '$' */
 .prompt {
-    color: #569cd6; /* Un color azul brillante */
+    color: var(--color-accent); /* Un color azul brillante */
     font-weight: 500;
     margin-right: 10px;
 }
 
 /* El texto de "output" */
 .output {
-    color: #fafafa; /* Texto blanco más brillante para el resultado */
+    color: var(
+        --color-text-main
+    ); /* Texto blanco más brillante para el resultado */
 }
 
 /* EL CURSOR PARPADEANTE */
 .cursor {
     animation: blink 1s step-end infinite;
-    color: #fafafa;
+    color: var(--color-text-main);
 }
 
 @keyframes blink {
@@ -92,15 +124,15 @@ body {
 
 #proyectos h2 {
     font-size: 1.8em;
-    color: #fafafa;
-    border-bottom: 2px solid #569cd6; /* Línea azul como el prompt */
+    color: var(--color-text-bright);
+    border-bottom: 2px solid var(--color-accent); /* Línea azul como el prompt */
     padding-bottom: 10px;
 }
 
 /* --- TARJETA DE PROYECTO INDIVIDUAL --- */
 .project-card {
-    background-color: #252526; /* Mismo color que la terminal */
-    border: 1px solid #333;
+    background-color: var(--color-bg-card); /* Mismo color que la terminal */
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 20px;
     margin-top: 25px; /* Espacio entre proyectos */
@@ -108,7 +140,7 @@ body {
 
 .project-card h3 {
     font-size: 1.4em;
-    color: #d4d4d4;
+    color: var(--color-text-main);
     margin-top: 0;
 }
 
@@ -117,13 +149,13 @@ body {
     line-height: 1.6;
 }
 
-/* --- EL ENLACE A GITHUB --- */
+/* --- EL ENLACE A MI GITHUB --- */
 .github-link {
     display: inline-block; /* estilo de botón */
     margin-top: 15px;
     padding: 10px 15px;
-    background-color: #569cd6; /* El azul del prompt */
-    color: #fafafa;
+    background-color: var(--color-accent); /* El azul del prompt */
+    color: var(--color-text-bright);
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
@@ -131,7 +163,9 @@ body {
 }
 
 .github-link:hover {
-    background-color: #4084c4; /* Un azul un poco más oscuro al pasar el mouse */
+    background-color: var(
+        --color-accent-hover
+    ); /* Un azul un poco más oscuro al pasar el mouse */
 }
 /* --- SECCIÓN DE HABILIDADES --- */
 #habilidades {
@@ -141,8 +175,8 @@ body {
 
 #habilidades h2 {
     font-size: 1.8em;
-    color: #fafafa;
-    border-bottom: 2px solid #569cd6; /* subrayado azul */
+    color: var(--color-text-bright);
+    border-bottom: 2px solid var(--color-accent); /* subrayado azul */
     padding-bottom: 10px;
 }
 
@@ -159,16 +193,16 @@ body {
 
 /* Cada tarjeta de categoría */
 .skill-category {
-    background-color: #252526; /* Mismo color que la terminal */
-    border: 1px solid #333;
+    background-color: var(--color-bg-card); /* Mismo color que la terminal */
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 15px 20px;
 }
 
 .skill-category h3 {
-    color: #569cd6; /* Título en azul */
+    color: var(--color-accent); /* Título en azul */
     margin-top: 0;
-    border-bottom: 1px dashed #555; /* Divisor sutil */
+    border-bottom: 1px dashed var(--color-border); /* Divisor sutil */
     padding-bottom: 10px;
 }
 
@@ -194,7 +228,7 @@ header {
 
 .logo {
     font-size: 1.5em;
-    color: #fafafa;
+    color: var(--color-text-main);
     font-weight: 500;
 }
 
@@ -211,7 +245,7 @@ header nav li {
 
 header nav a {
     text-decoration: none;
-    color: #569cd6; /* Links en azul, como el prompt */
+    color: var(--color-accent); /* Links en azul, como el prompt */
     font-size: 1.1em;
     padding-bottom: 5px;
     border-bottom: 2px solid transparent; /* Borde transparente para preparar el hover */
@@ -220,8 +254,8 @@ header nav a {
 
 /* El efecto al pasar el mouse */
 header nav a:hover {
-    color: #fafafa; /* Link se pone blanco */
-    border-bottom: 2px solid #fafafa; /* Se subraya de blanco */
+    color: var(--color-text-bright); /* Link se pone blanco */
+    border-bottom: 2px solid var(--color-text-bright); /* Se subraya de blanco */
 }
 /* --- SECCIÓN DE CONTACTO --- */
 #contacto {
@@ -232,8 +266,8 @@ header nav a:hover {
 
 #contacto h2 {
     font-size: 1.8em;
-    color: #fafafa;
-    border-bottom: 2px solid #569cd6;
+    color: var(--color-text-bright);
+    border-bottom: 2px solid var(--color-accent);
     padding-bottom: 10px;
     display: inline-block; /* Para que el subrayado se ajuste al texto */
 }
@@ -244,7 +278,34 @@ header nav a:hover {
     max-width: 600px;
     margin: 25px auto; /* Centrar el párrafo */
 }
+/* --- ANIMACIÓN DE SCROLL --- */
 
+/* Por defecto, las secciones están ocultas */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Empieza 30px abajo */
+    transition: all 0.8s ease-out;
+}
+
+/* La clase que JS añadirá para mostrarla */
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+/* --- ESTILO DEL BOTÓN DE TEMA --- */
+#theme-toggle {
+    font-size: 1.5em; /* Hace el ícono luna más grande */
+    background: none;
+    border: none;
+    color: var(--color-text-main); /* Usa el color de texto principal */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--color-accent); /* Cambia al color de acento */
+    transform: scale(1.2); /* Se hace un poco más grande */
+}
 /*
-Aza estuvo aquí
+Aza estuvo aquí jejeje
 */
